@@ -32,10 +32,11 @@ To get a local copy up and running follow these simple example steps.
 - Run bundle install
 
 ### Usage
-- rails db:create db:migrate
+- rails db:create
+- rails db:migrate
 - rails s
 ### Run tests
-
+- rails db:seed
 ### Deployment
 
 
