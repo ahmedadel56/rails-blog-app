@@ -28,6 +28,12 @@ post_9 = Post.create(user: third_user, title: 'Hello', text: 'This is my second 
 post_10 = Post.create(user: fourth_user, title: 'Hello', text: 'This is my second post')
 post_11 = Post.create(user: fivth_user, title: 'Hello', text: 'This is my second post')
 post_12 = Post.create(user: six_user, title: 'Hello', text: 'This is my second post')
+post_13 = Post.create(user: first_user, title: 'Hello', text: 'This is my third post')
+post_14 = Post.create(user: second_user, title: 'Hello', text: 'This is my third post')
+post_16 = Post.create(user: third_user, title: 'Hello', text: 'This is my third post')
+post_17 = Post.create(user: fourth_user, title: 'Hello', text: 'This is my third post')
+post_18 = Post.create(user: fivth_user, title: 'Hello', text: 'This is my third post')
+post_19 = Post.create(user: six_user, title: 'Hello', text: 'This is my third post')
 
 #.............*** Comments List ***................
 Comment.create(post: post_1, user: second_user, text: 'Hi Tom!' )
