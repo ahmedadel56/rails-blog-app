@@ -14,7 +14,12 @@ RSpec.describe Post, type: :model do
     expect(post).to_not be_valid
   end
   it 'Title must not exceed 250 characters' do
-    post.title = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'
+    post.title = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+     sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+     Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris
+      nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit
+     in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
+     cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'
     expect(post).to_not be_valid
   end
   it 'is not valid with a negative value for comments counter' do
