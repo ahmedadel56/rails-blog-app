@@ -1,5 +1,6 @@
 <h1>Here is a list of all users</h1>
 <% @users.each do |user| %>
+  image: <%= user.photo %><br>
   name: <%= user.name %><br>
   posts <%= user.posts_counter %><br>
 <% end %>
