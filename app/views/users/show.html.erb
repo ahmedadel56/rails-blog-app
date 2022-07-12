@@ -1,0 +1,16 @@
+<h2>Here is the Profile for a given user</h2>
+  image: <%= @user.photo %><br>
+  name: <%= @user.name %><br>
+  posts <%= @user.posts_counter %><br>
+  bio <%= @user.bio %><br>
+<hr>
+<% @posts.each do |post| %>
+    <h3>post</h3>
+  title: <%= post.title %><br>
+  content: <%= post.text %><br>
+  comments <%= post.comment_counter %><br>
+  likes <%= post.likes_counter %><br>  
+<% end %>
+
+<%# don't forget please here U need to add redirect method to the button %>
+<button>See all posts</button>
