@@ -3,6 +3,10 @@
   comments <%= @post.comment_counter %><br>
   likes <%= @post.likes_counter %><br>  
 
-<% @comments.each do |comment| %>
-    Text: <%= comment.text %><br>
+<% @post.comments.each do |comment| %>
+<div class="comment-wrapper">
+  User Name:    <%= User.find_by(id:comment.user_id).name %> <br>
+  Comment:   <%= comment.text %>
+  <br>
+</div>
 <% end %>
