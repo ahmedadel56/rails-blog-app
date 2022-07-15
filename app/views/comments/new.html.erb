@@ -1,0 +1,7 @@
+<h1 class ="comment-create-header">Create a comment</h1>
+<%= form_with model: @comment , url: user_post_comments_path ,scope: :comment do |form| %>
+		<%= form.label :text, "Content", class: "label" %>
+		<%= form.text_area :text, placeholder: "Type here...", required: true %>
+        <%= form.submit "Comment", class: "submit-btn" %>
+  </div>
+<% end %>

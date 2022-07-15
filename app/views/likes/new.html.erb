@@ -1,0 +1,8 @@
+<h1 class ="comment-create-header">Create a Like</h1>
+<%= form_with model: @like , url: new_user_post_like_path ,scope: :like do |form| %>
+        <% if @like%>
+        <button disabled>Like</button>
+        <%else%>
+        <%= form.submit "submit"%>
+        <%end%>
+<% end %>
