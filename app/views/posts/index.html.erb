@@ -1,0 +1,11 @@
+<h1>Names of all the people</h1>
+<% @posts.each do |post| %>
+  Title: <%= post.title %><br>
+  Auther id: <%= post.user_id %><br>
+        <% post.comments.each do |comment| %>
+        <div class="comment-wrapper">
+            User Name:    <%= User.find_by(id:comment.user_id).name %> <br>
+            Comment:   <%= comment.text %>
+        </div>
+      <% end %>
+<% end %>
