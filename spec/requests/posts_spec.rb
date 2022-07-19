@@ -14,7 +14,7 @@ RSpec.describe 'Posts', type: :request do
       get user_posts_path(@user.id)
       expect(response).to render_template(:index)
       expect(response).to have_http_status(:ok)
-      expect(response.body).to include('Names of all the people')
+      expect(response.body).to include('Names of all the posts')
     end
     it 'Show Post details' do
       @user = user

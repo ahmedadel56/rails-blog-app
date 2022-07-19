@@ -3,4 +3,5 @@
   image: <%= user.photo %><br>
   name: <%= user.name %><br>
   posts <%= user.posts_counter %><br>
+  <%= link_to "See User Profile", user_path(user.id), id: user.id %>
 <% end %>
