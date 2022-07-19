@@ -4,8 +4,8 @@ Rails.application.routes.draw do
   # root "articles#index"
   root "users#index"
   resources :users , only: [:index, :show] do
-    resources :posts , only: [:index, :show] do
-      resources :comments , :likes
+    resources :posts , only: [:index, :show, :new, :create] do
+      resources :comments , :likes, only: [:new, :create]
     end
   end  
 end
