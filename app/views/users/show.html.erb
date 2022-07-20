@@ -1,16 +1,19 @@
 <h2>Here is the Profile for a given user</h2>
-  image: <%= @user.photo %><br>
+  img: <%= @user.photo %><br>
   name: <%= @user.name %><br>
   posts <%= @user.posts_counter %><br>
   bio <%= @user.bio %><br>
 <hr>
 <% @posts.each do |post| %>
     <h3>post</h3>
-  title: <%= post.title %><br>
+  <%# title: <%= post.title<br>  %>
+  <h2><a href= "<%=user_post_path(@user.id,post.id)%>"> <%= post.title %></a></h2>  <br/>
+
   content: <%= post.text %><br>
   comments <%= post.comment_counter %><br>
   likes <%= post.likes_counter %><br>  
+  <%# <%= link_to "See Post", user_post_path(@user.id,post.id),class: post.id %>
+  <br/>
 <% end %>
-
-<%# don't forget please here U need to add redirect method to the button %>
-<button>See all posts</button>
+  <%= link_to "See User Posts", user_posts_path(@user.id) %>
+  <%# <a href="<%=user_posts_path(@user.id)"><button>See All Posts</button></a>  %>

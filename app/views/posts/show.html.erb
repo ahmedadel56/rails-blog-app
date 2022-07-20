@@ -1,11 +1,13 @@
 <h1>Show spacefic post</h1>
+  <h2><%= @user.name %></h2>
+  title: <%= @post.title %><br/>
   content: <%= @post.text %><br>
   comments <%= @post.comment_counter %><br>
   likes <%= @post.likes_counter %><br>  
 
 <% @comments.each do |comment| %>
 <div class="comment-wrapper">
-  User Name:    <%= User.find_by(id:comment.user_id).name %> <br>
+  User Name:    <%= comment.user.name %> <br>
   Comment:   <%= comment.text %>
   <br>
 </div>
