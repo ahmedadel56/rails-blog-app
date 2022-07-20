@@ -5,7 +5,7 @@
 
 <% @comments.each do |comment| %>
 <div class="comment-wrapper">
-  User Name:    <%= User.find_by(id:comment.user_id).name %> <br>
+  User Name:    <%= comment.user.name %> <br>
   Comment:   <%= comment.text %>
   <br>
 </div>
