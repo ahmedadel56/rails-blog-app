@@ -1,11 +1,11 @@
 <h1>Names of all the posts</h1>
 <div>
     <div>
-      <img src = <%=@user.photo %> >
+      photo: <%= @user.photo %>
     </div>
     <div>
       <h1><%= @user.name %></h1>
-      <span><%= @user.posts_counter %> </span>
+      Posts Counter: <span><%= @user.posts_counter %> </span>
     </div>
 </div>
 <% @user.posts.each do |post|  %>
