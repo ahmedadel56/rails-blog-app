@@ -1,7 +1,7 @@
 <h1>Here is a list of all users</h1>
 <% @users.each do |user| %>
   image: <%= user.photo %><br>
-  name: <%= user.name %><br>
+  name: <a href= "<%=user_path(user.id)%>"> <%= user.name %></a> <br/>
   posts <%= user.posts_counter %><br>
-  <%= link_to "See User Profile", user_path(user.id)%>
+  <%# <%= link_to "See User Profile", user_path(user.id)%>
 <% end %>
