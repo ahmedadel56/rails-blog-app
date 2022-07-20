@@ -11,7 +11,7 @@ RSpec.describe 'Users', type: :feature do
     expect(page).to have_content(user2.photo)
     expect(page).to have_content(user1.posts_counter.to_s)
     expect(page).to have_content(user2.posts_counter.to_s)
-    
+
     # When I click on a user, I am redirected to that user's show page.
 
     click_link user1.name

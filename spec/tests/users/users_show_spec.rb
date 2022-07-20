@@ -21,19 +21,18 @@ RSpec.describe 'User', type: :feature do
     expect(page).to_not have_content(user.posts[3].text)
     expect(page).to_not have_content(user.posts[4].text)
     # I can see a button that lets me view all of a user's posts.
-    click_link "See User Posts"
+    click_link 'See User Posts'
     expect(current_path).to eql(user_posts_path(user.id))
-    
+
     # When I click on a post in user's posts page, it redirects me to that post's show page.
 
     click_link user.posts[0].title
-    expect(current_path).to eql(user_post_path(user.id,user.posts[0].id))
+    expect(current_path).to eql(user_post_path(user.id, user.posts[0].id))
 
     #  When I click a user's post in user profile, it redirects me to that post's show page .
     visit users_path
     click_link user.name
     click_link user.posts[0].title
-    expect(current_path).to eql(user_post_path(user.id,user.posts[0].id))
-        
+    expect(current_path).to eql(user_post_path(user.id, user.posts[0].id))
   end
 end
