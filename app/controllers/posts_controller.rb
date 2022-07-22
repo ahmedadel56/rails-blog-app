@@ -25,6 +25,15 @@ class PostsController < ApplicationController
     end
   end
 
+  def destroy
+    @post = Post.find_by(id: params[:id])
+    if @post.destroy
+      redirect_to user_posts_path, notice: 'succeded'
+    else
+      flash.now[:notice] = 'error'
+    end
+  end
+
   private
 
   def post_params

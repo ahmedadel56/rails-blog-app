@@ -4,6 +4,8 @@
   posts <%= @user.posts_counter %><br>
   bio <%= @user.bio %><br>
 <hr>
+  <%= link_to "new Post", new_user_post_path(@user.id) %>
+
 <% @posts.each do |post| %>
     <h3>post</h3>
   <%# title: <%= post.title<br>  %>
