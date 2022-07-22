@@ -14,7 +14,7 @@
  *= require_self
  */
 
- ul {
+ul {
   list-style-type: none;
   margin: 0;
   padding: 0;
@@ -24,6 +24,7 @@
 
 li {
   float: left;
+  border-right: 1px solid #bbb;
 }
 
 li a {
@@ -40,11 +41,7 @@ li a:hover {
 }
 
 .active {
-  background-color: #04AA6D;
-}
-
-li {
-  border-right: 1px solid #bbb;
+  background-color: #04aa6d;
 }
 
 li:last-child {
