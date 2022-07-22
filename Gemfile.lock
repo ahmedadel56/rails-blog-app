@@ -291,7 +291,7 @@ DEPENDENCIES
   capybara
   database_cleaner
   debug
-  devise
+  devise (~> 4.2)
   importmap-rails
   jbuilder
   pg (~> 1.1)
