@@ -23,7 +23,7 @@
     Likes couter: <%= post.likes_counter  %><br/>
     Comments counter <%= post.comment_counter  %>
   <% if can? :manage, post %>
-      <%=button_to 'Delete', {:controller => :posts, :action => 'destroy', :id => post.id}, :method => :delete %> 
+      <%=button_to 'Delete Post', {:controller => :posts, :action => 'destroy', :id => post.id}, :method => :delete %> 
       <% end %>
       
     <% post.comments.each do |comment| %>
@@ -31,5 +31,7 @@
          <%= comment.user.name %>  :  <%= comment.text %>
       </div> 
     <% end %>
+        <button><a href= "<%=new_user_post_comment_path(current_user.id,post.id)%>">Add Comment</a></button>
+
   </div>
 <% end %>
