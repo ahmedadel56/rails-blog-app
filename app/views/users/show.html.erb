@@ -4,18 +4,25 @@
   posts <%= @user.posts_counter %><br>
   bio <%= @user.bio %><br>
 <hr>
+  <% if @user.id == current_user.id %>
   <%= link_to "new Post", new_user_post_path(@user.id) %>
-
+  <% end %>
+  
 <% @posts.each do |post| %>
-    <h3>post</h3>
-  <%# title: <%= post.title<br>  %>
   <h2><a href= "<%=user_post_path(@user.id,post.id)%>"> <%= post.title %></a></h2>  <br/>
 
   content: <%= post.text %><br>
   comments <%= post.comment_counter %><br>
-  likes <%= post.likes_counter %><br>  
-  <%# <%= link_to "See Post", user_post_path(@user.id,post.id),class: post.id %>
+  likes <%= post.likes_counter %><br>
+  
+  <% if can? :manage, post %>
+      <%=button_to 'Delete', user_post_path(@user.id,post.id), :method => :delete %>
+  <% end %>
+  
   <br/>
 <% end %>
-  <%= link_to "See User Posts", user_posts_path(@user.id) %>
-  <%# <a href="<%=user_posts_path(@user.id)"><button>See All Posts</button></a>  %>
+  <%# <%= link_to "See User Posts", user_posts_path(@user.id) %>
+  <a href="<%=user_posts_path(@user.id)%>"><button>See All Posts</button></a>
+
+
+

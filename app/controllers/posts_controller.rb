@@ -1,7 +1,8 @@
 class PostsController < ApplicationController
   before_action :authenticate_user!
   def index
-    @user = User.includes(posts: [comments: [:user]]).find(params[:user_id])
+    @user = User.find(params[:user_id])
+    @posts = Post.includes(comments: [:user]).where(user_id: params[:user_id])
   end
 
   def show
@@ -19,7 +20,7 @@ class PostsController < ApplicationController
     @new_post = current_user.posts.new(post_params)
     @new_post.update_posts_counter
     if @new_post.save
-      redirect_to user_posts_path, notice: 'succeded'
+      redirect_to root_path, notice: 'succeded'
     else
       render :new
     end
@@ -28,7 +29,7 @@ class PostsController < ApplicationController
   def destroy
     @post = Post.find_by(id: params[:id])
     if @post.destroy
-      redirect_to user_posts_path, notice: 'succeded'
+      redirect_to root_path, notice: 'succeded'
     else
       flash.now[:notice] = 'error'
     end
