@@ -9,6 +9,12 @@
 <div class="comment-wrapper">
   User Name:    <%= comment.user.name %> <br>
   Comment:   <%= comment.text %>
+                     <% if can? :manage, comment %>
+            <%= button_to "Delete Comment", user_post_comment_path(user_id: @user.id, post_id: @post.id, id: comment.id) , method: :delete %>
+            
+            <% end %>
+            
   <br>
 </div>
 <% end %>
+  <button><a href= "<%=new_user_post_comment_path(current_user.id,@post.id)%>">Add Comment</a></button>
