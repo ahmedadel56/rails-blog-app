@@ -36,7 +36,7 @@ To get a local copy up and running follow these simple example steps.
 - rails db:migrate
 - rails s
 ### Run tests
-- rails db:seed
+- rspec
 ### Deployment
 
 
