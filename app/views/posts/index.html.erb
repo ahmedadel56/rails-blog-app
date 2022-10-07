@@ -1,7 +1,7 @@
 <h1>Names of all the posts</h1>
 <div>
     <div>
-      photo: <%= @user.photo %>
+  <img src="<%= url_for(@user.image) %>" width ="200px" height = "200px" alt="">
     </div>
     <div>
       <h1><%= @user.name %></h1>
