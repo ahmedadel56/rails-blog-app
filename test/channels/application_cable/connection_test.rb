@@ -1,4 +1,6 @@
-require 'test_helper'
+<div class="field">
+<%= f.file_field :avatar %>
+</div>require 'test_helper'
 
 class ApplicationCable::ConnectionTest < ActionCable::Connection::TestCase
   # test "connects with cookies" do
