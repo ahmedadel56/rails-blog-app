@@ -1,7 +1,23 @@
-<h1>Here is a list of all our users</h1>
-<% @users.each do |user| %>
-  <img src="<%= url_for(user.image) %>" width ="200px" height = "200px" alt="">
-  name: <a href= "<%=user_path(user.id)%>"> <%= user.name %></a> <br/>
-  posts <%= user.posts_counter %><br>
-  <%# <%= link_to "See User Profile", user_path(user.id)%>
-<% end %>
+<h1>Users</h1>
+<hr/>
+<table id="users">  
+  <% @users.each do |user| %>
+    <tr>
+      <div class="d-flex mb-2">
+
+        <div class="border col-2 me-3"><img src="<%= url_for(user.image) %>" width ="200px" height = "200px" alt=""></div>
+
+        <div class="border col-9 p-2">
+          <h2>
+            <a href= "<%=user_path(user.id)%>"> <%= user.name %></a>
+          </h2>
+          <p align="right">
+            Number of posts: 
+            <%= user.posts_counter %>
+          </p>
+        <div>
+        
+      </div>
+    </tr>
+  <% end %>
+</table>
