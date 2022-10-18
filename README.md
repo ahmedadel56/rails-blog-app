@@ -12,7 +12,7 @@
 
 ## Live Demo (if available)
 
-[Live Demo Link](https://livedemo.com)
+[Live Demo Link](https://see-blog.herokuapp.com)
 
 
 ## Getting Started
@@ -37,8 +37,6 @@ To get a local copy up and running follow these simple example steps.
 - rails s
 ### Run tests
 - rspec
-### Deployment
-
 
 ## Authors
 
